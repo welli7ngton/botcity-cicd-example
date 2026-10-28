@@ -28,6 +28,7 @@ def main():
         print("teste update")
         print("teste update")
         print("teste update")
+        print("teste update")
 
         maestro.finish_task(
             task_id=execution.task_id,
