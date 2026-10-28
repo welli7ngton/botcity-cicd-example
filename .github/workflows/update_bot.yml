@@ -31,7 +31,7 @@ jobs:
           botId: ${{ vars.BOT_ID }}
           technology: python
           botPath: ./bot.zip
-          version: ${{ github.run_number }}
+          version: 2
         env:
           LOGIN: ${{ secrets.LOGIN }}
           SERVER: ${{ secrets.SERVER }}

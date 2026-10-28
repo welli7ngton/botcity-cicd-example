@@ -25,11 +25,6 @@ def main():
             autor = quote.find_element(By.CSS_SELECTOR, ".author").text
             print(f"\n[{i}] {texto}\n    — {autor}")
 
-        print("teste update")
-        print("teste update")
-        print("teste update")
-        print("teste update")
-
         maestro.finish_task(
             task_id=execution.task_id,
             status=AutomationTask.Status.SUCCESS,
