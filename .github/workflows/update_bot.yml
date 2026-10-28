@@ -26,7 +26,7 @@ jobs:
         with:
           deploy: true
           release: true
-          botId: test_ci_cd
+          botId: test_ci_cd-1
           technology: python
           botPath: ./bot.zip
           version: ${{ github.run_number }}
