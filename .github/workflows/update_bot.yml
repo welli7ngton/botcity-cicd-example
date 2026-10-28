@@ -1,0 +1,35 @@
+name: Update Bot
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+
+      - name: Build bot package
+        run: |
+          chmod +x build.sh
+          ./build.sh
+
+      - name: Deploy bot in Orchestrator
+        uses: botcity-dev/botcity-action-bots@v1.0.6
+        with:
+          deploy: true
+          botId: test_ci_cd
+          technology: python
+          botPath: ./bot.zip
+          version: ${{ github.run_number }}
+        env:
+          LOGIN: ${{ secrets.LOGIN }}
+          SERVER: ${{ secrets.SERVER }}
+          KEY: ${{ secrets.KEY }}
