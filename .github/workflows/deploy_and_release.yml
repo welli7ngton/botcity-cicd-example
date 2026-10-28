@@ -27,7 +27,7 @@ jobs:
           deploy: true
           release: true
           version: 1
-          botId: test_ci_cd-1
+          botId: ${{ vars.BOT_ID }}
           technology: python
           botPath: ./bot.zip
         env:
