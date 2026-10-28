@@ -21,10 +21,11 @@ jobs:
           chmod +x build.sh
           ./build.sh
 
-      - name: Deploy bot in Orchestrator
+      - name: Deploy and release bot in Orchestrator
         uses: botcity-dev/botcity-action-bots@v1.0.6
         with:
           deploy: true
+          release: true
           botId: test_ci_cd
           technology: python
           botPath: ./bot.zip
